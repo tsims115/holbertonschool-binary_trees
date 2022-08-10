@@ -31,7 +31,8 @@ int find_parent_number(const binary_tree_t *tree, char **side)
  * @tree: tree to check
  * Return: returns 1 if valid and 0 if Null or invalid
  */
-int binary_tree_is_bst(const binary_tree_t *tree) {
+int binary_tree_is_bst(const binary_tree_t *tree)
+{
 	int status = 1;
 	int pnumber;
 	char *side;
@@ -50,18 +51,18 @@ int binary_tree_is_bst(const binary_tree_t *tree) {
 				return (0);
 	}
 	if (tree->left)
-		{
-			if (tree->left->n > tree->n)
-				return (0);
-			status = binary_tree_is_bst(tree->left);
-		}
+	{
+		if (tree->left->n > tree->n)
+			return (0);
+		status = binary_tree_is_bst(tree->left);
+	}
 	if (status == 0)
 		return (status);
 	if (tree->right)
-		{
-			if (tree->right->n < tree->n)
-				return (0);
-			status = binary_tree_is_bst(tree->right);
-		}
+	{
+		if (tree->right->n < tree->n)
+			return (0);
+		status = binary_tree_is_bst(tree->right);
+	}
 	return (status);
 }
