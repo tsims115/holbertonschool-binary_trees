@@ -1,7 +1,7 @@
 #include "binary_trees.h"
 
 /**
- * @bst_search - searches for value inside BST tree
+ * bst_search - searches for value inside BST tree
  *
  * @tree: tree to use
  * @value: value to look for
