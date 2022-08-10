@@ -5,15 +5,16 @@
  *
  * @tree: tree to insert node in
  * @value: value to use with node
- * @return bst_t*
+ * Return: new node
  */
 bst_t *bst_insert(bst_t **tree, int value)
 {
 	bst_t *cur_node;
+
 	if (*tree == NULL)
 		return (*tree = (bst_t *)binary_tree_node(*tree, value));
 	cur_node = *tree;
-	while(cur_node)
+	while (cur_node)
 	{
 		if (cur_node->n == value)
 			return (NULL);
