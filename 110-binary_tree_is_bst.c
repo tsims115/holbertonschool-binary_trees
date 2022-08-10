@@ -32,7 +32,7 @@ int find_parent_number(const binary_tree_t *tree, char **side)
 int binary_tree_is_bst(const binary_tree_t *tree) {
 	int status = 1;
 	int pnumber;
-	char *side = malloc(sizeof(char) * 10);
+	char *side;
 
 	pnumber = find_parent_number(tree, &side);
 	if (tree)
