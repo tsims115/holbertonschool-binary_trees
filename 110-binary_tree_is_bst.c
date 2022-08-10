@@ -34,34 +34,32 @@ int binary_tree_is_bst(const binary_tree_t *tree) {
 	int pnumber;
 	char *side;
 
+	if (!tree)
+		return (0);
 	if (tree->parent)
 		pnumber = find_parent_number(tree, &side);
-	if (tree)
+	if (tree->parent)
 	{
-		if (tree->parent)
-		{
-			if (strcmp(side, "right") == 0)
-				if (tree->n <= pnumber)
-					return (0);
-			if (strcmp(side, "left") == 0)
-				if (tree->n >= pnumber)
-					return (0);
-		}
-		if (tree->left)
-			{
-				if (tree->left->n > tree->n)
-					return (0);
-				status = binary_tree_is_bst(tree->left);
-			}
-		if (status == 0)
-			return (status);
-		if (tree->right)
-			{
-				if (tree->right->n < tree->n)
-					return (0);
-				status = binary_tree_is_bst(tree->right);
-			}
-		return (status);
+		if (strcmp(side, "right") == 0)
+			if (tree->n <= pnumber)
+				return (0);
+		if (strcmp(side, "left") == 0)
+			if (tree->n >= pnumber)
+				return (0);
 	}
-	return (0);
+	if (tree->left)
+		{
+			if (tree->left->n > tree->n)
+				return (0);
+			status = binary_tree_is_bst(tree->left);
+		}
+	if (status == 0)
+		return (status);
+	if (tree->right)
+		{
+			if (tree->right->n < tree->n)
+				return (0);
+			status = binary_tree_is_bst(tree->right);
+		}
+	return (status);
 }
