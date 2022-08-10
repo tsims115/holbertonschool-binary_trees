@@ -1,8 +1,10 @@
 #include "binary_trees.h"
 
 /**
- * 
- * 
+ * find_parent_number - finds parent number and determines what side
+ * @tree: tree to use
+ * @side: side of root
+ * Return: parent number
  */
 
 int find_parent_number(const binary_tree_t *tree, char **side)
@@ -11,7 +13,7 @@ int find_parent_number(const binary_tree_t *tree, char **side)
 	const binary_tree_t *last_node;
 
 	cur_node = tree;
-	while(cur_node->parent != NULL)
+	while (cur_node->parent != NULL)
 	{
 		last_node = cur_node;
 		cur_node = cur_node->parent;
