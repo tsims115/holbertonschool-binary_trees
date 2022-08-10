@@ -34,7 +34,8 @@ int binary_tree_is_bst(const binary_tree_t *tree) {
 	int pnumber;
 	char *side;
 
-	pnumber = find_parent_number(tree, &side);
+	if (tree->parent)
+		pnumber = find_parent_number(tree, &side);
 	if (tree)
 	{
 		if (tree->parent)
